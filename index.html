@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="expense-tracker-text">
+        <i class="fa fa-book" aria-hidden="true"></i>
+        Expense tracker
+    </div>
+    <div class="Container-div">
+        <div class='search-box'>
+            <div class="search-box-and-icon-container">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="search" class="input" id="search-input-box" placeholder="search" >
+            </div>
+        </div>
+        
+        <form action="submit" method="post" id="form" class="form-data">
+            <input type="text" class= "input" id="amount-input" placeholder="  $ Amount" >
+            <input type="text" class= "input" id="Desc-input" placeholder="Description" >
+            <select class="input-1" id="category-input" placeholder = "Category">
+                <option>Select--</option>
+                <option class="options">Fooding</option>
+                <option class="options">Petrol</option>
+                <option class="options">Party</option>
+                <option class="options">Games</option>
+                <option class="options">House</option>
+                <option class="options">Car</option>
+            </select>
+            <button class="submitbtn">Submit</button>
+        </form>
+        <div class="left-right-section-container">
+            <div class="sidebar">
+            </div>
+            <div class="right-section-item-container">
+            </div>
+        </div>
+
+        
+    </div>
+    
+</body>
+<script src="/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>
