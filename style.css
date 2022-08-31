@@ -102,11 +102,13 @@ input:focus{
 }
 /* -------selector options */
 .options{
-    background-color: #4285F4;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(3, 16, 59);
     font-size: 14px;
     font-weight: 500;
 }
+
+
 
 .submitbtn{
     width: 100px;
@@ -118,26 +120,22 @@ input:focus{
     border-radius: 3px;
     color: white;
 }
+
+.blank-form-error-text{
+    font-size:  14px;
+    background-color: #4286f400;
+    font-weight: 400;
+    margin-left: 10px;
+    color: white;
+}
+
 /* item section */
 .left-right-section-container{
     padding-left:1px ;
     display: flex;
     height: 100%;
 }
-.sidebar{
-    width: 15%;
-    height: 100%;
-    border-radius: 0px 0px 0px 5px;
-    background-color: #00000073;
-    box-shadow: 2px 2px 15px 2px rgba(255, 255, 255, 0.375);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(3px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-top: 0px;
-    padding-left: 10px;
-}
+
 
 
 /* output right section starts */
@@ -145,8 +143,12 @@ input:focus{
     width: 95%;
     padding: 15px;
     display: flex;
-    flex-direction:column;
-    overflow-y:scroll;
+    flex-flow: column wrap;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    align-items: baseline;
 }
 .right-section-item-container::-webkit-scrollbar{
     color: #4285F4;
@@ -157,9 +159,9 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: linear-gradient(to right top, #00000000, #0000002d, #00000021, #ffffff34);
+    background-image: linear-gradient(to right top, #6f67e000, #5933c42d, #6621a721, #511db134);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(45px);
     -webkit-backdrop-filter: blur(17px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-top: 0px;

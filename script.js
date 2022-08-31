@@ -6,27 +6,29 @@ const submitButton = document.getElementsByClassName("submitbtn")
 const rightGreaterDiv = document.querySelector(".right-section-item-container")
 
 
-document.addEventListener('DOMContentLoaded', ()=>{
-
-    axios.get('https://crudcrud.com/api/0f0029afb15146829ce0737089f54eae/expenses')
-    .then((response)=>{
-        for(let i=0; i<response.data.length; i++){
-            //creating elements from database
-            createElements(response.data[i])
-        }
-    })
-    .catch((err) => {
-        // console.log(err);
-    })
+document.addEventListener('DOMContentLoaded', async ()=>{
+    try {
+       await axios.get('https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses')
+        .then((response)=>{
+            for(let i=0; i<response.data.length; i++){
+                //creating elements from database
+                createElements(response.data[i])
+            }
+        })
+        
+    } catch (error) {
+        console.log(error); 
+    }
 })
 
 const errorMsg = document.createElement('h4')
+errorMsg.classList.add('blank-form-error-text')
 form.appendChild(errorMsg)
 errorMsg.innerHTML = ''
 
 submitButton[0].addEventListener('click',submit)
 
-function submit(e){
+async function submit(e){
     e.preventDefault()
 
     if(amount.value=='' || desc.value=='' || category.value=="Select--"){
@@ -50,14 +52,17 @@ function submit(e){
         category.value=''
 
         // sending to local storage
-        axios.post('https://crudcrud.com/api/0f0029afb15146829ce0737089f54eae/expenses',subObj)
-        .then((response)=>{
-            console.log(response);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
 
+        try {
+            await axios.post('https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses',subObj)
+            .then((response)=>{
+                console.log(response);
+            })
+            
+        } catch (error) {
+            console.log(err);
+            
+        }
         // calling create element to create elements from form data submitted
         createElements(subObj)
     }
@@ -111,11 +116,6 @@ function createElements(anyObject){
     categoryResult.innerHTML = anyObject.cat
 
 
-    // checking to change background image
-    if(anyObject.desc == "Fooding"){
-        singleItemContainer.style.backgroundImage='download.jfif'
-
-    }
 
 
     // delete and edit funcationality ==================================================================================
@@ -123,25 +123,33 @@ function createElements(anyObject){
     // delete-------------------------------
     singleItemDeleteBtn.addEventListener('click', deleteFn) 
     
-    function deleteFn(){
+    async function deleteFn(){
         
         //delete from database storage
         const targetElementText = singleItemDeleteBtn.parentElement.nextSibling.nextSibling.innerHTML
         console.log(targetElementText);
-        axios.get('https://crudcrud.com/api/0f0029afb15146829ce0737089f54eae/expenses')
-        .then((response) =>{
-            for(let j=0; j<response.data.length; j++){
-                if(response.data[j].desc == targetElementText){
-                let targetElementIdToRemove = response.data[j]._id
-                    axios.delete(`https://crudcrud.com/api/0f0029afb15146829ce0737089f54eae/expenses/${targetElementIdToRemove}`)
-                    .then((response) => {
-                        console.log('deleted from database');
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    })
-            }}
-        })
+
+        try {
+            await axios.get('https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses')
+            .then((response) =>{
+                for(let j=0; j<response.data.length; j++){
+                    if(response.data[j].desc == targetElementText){
+                    let targetElementIdToRemove = response.data[j]._id
+                    try {
+                        axios.delete(`https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses/${targetElementIdToRemove}`)
+                        // .then((response) => {
+                        //     console.log('deleted from database');
+                        // })
+                        
+                    } catch (error) {
+                        console.log(error);
+                    }
+                }}
+            }) 
+        } catch (error) {
+            console.log(error);
+        }
+
         singleItemDeleteBtn.parentElement.parentElement.remove()
 
     }
@@ -152,11 +160,25 @@ function createElements(anyObject){
         amount.value = editButton.previousSibling.innerHTML
         desc.value = editButton.parentElement.nextSibling.innerHTML
         category.value = editButton.parentElement.nextSibling.nextSibling.innerHTML
-
         deleteFn()
-
     })
-
 }
 
 // search function
+const searchBox = document.getElementById('search-input-box')
+
+searchBox.addEventListener('keyup', function(e){
+    let text = e.target.value
+    console.log(text.toLowerCase());
+    let allElements = document.getElementsByClassName('desc-result')
+    let findingText = Array.from(allElements)
+    findingText.forEach((ele) =>{
+        console.log(ele.textContent);
+        if(ele.textContent.toLocaleLowerCase().indexOf(text) != -1){
+            ele.parentElement.style.display = 'block'
+        }else{
+            ele.parentElement.style.display = 'none'
+        }
+    })
+
+})
