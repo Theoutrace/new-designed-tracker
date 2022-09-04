@@ -10,7 +10,7 @@ const rightGreaterDiv = document.querySelector(".right-section-item-container")
 
 document.addEventListener('DOMContentLoaded', async ()=>{
     try {
-       await axios.get('https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses')
+       await axios.get('https://crudcrud.com/api/5ce35b4a0de040c7bbd7da115c1d8be0/expenses')
         .then((response)=>{
             for(let i=0; i<response.data.length; i++){
                 //creating elements from database
@@ -56,7 +56,7 @@ async function submit(e){
         // sending to local storage
 
         try {
-            await axios.post('https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses',subObj)
+            await axios.post('https://crudcrud.com/api/5ce35b4a0de040c7bbd7da115c1d8be0/expenses',subObj)
             .then((response)=>{
                 console.log(response);
             })
@@ -149,13 +149,13 @@ function createElements(anyObject){
         console.log(targetElementText);
 
         try {
-            await axios.get('https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses')
+            await axios.get('https://crudcrud.com/api/5ce35b4a0de040c7bbd7da115c1d8be0/expenses')
             .then((response) =>{
                 for(let j=0; j<response.data.length; j++){
                     if(response.data[j].desc == targetElementText){
                     let targetElementIdToRemove = response.data[j]._id
                     try {
-                        axios.delete(`https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses/${targetElementIdToRemove}`)
+                        axios.delete(`https://crudcrud.com/api/5ce35b4a0de040c7bbd7da115c1d8be0/expenses/${targetElementIdToRemove}`)
                         // .then((response) => {
                         //     console.log('deleted from database');
                         // })

@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("pexels-karolina-grabowska-4386157.jpg");
+    background-image: url("images/pexels-karolina-grabowska-4386157.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -184,7 +184,7 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: url('/a781ce32751817.56929eefe4f71.jpg');
+    background-image: url('images/a781ce32751817.56929eefe4f71.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -202,7 +202,7 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: url('/petrol-pump-graphic-design-template-with-yellow-background-trendy-design-400-211680836.jpg');
+    background-image: url('images/petrol-pump-graphic-design-template-with-yellow-background-trendy-design-400-211680836.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -220,7 +220,7 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: url('/disco-party-people-vector-background-free-116738.jpg');
+    background-image: url('images/disco-party-people-vector-background-free-116738.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -239,7 +239,7 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: url('/game-ro.jpg');
+    background-image: url('images/game-ro.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -257,7 +257,7 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: url('/pngtree-isometric-house-illustration-image_731324.jpg');
+    background-image: url('images/pngtree-isometric-house-illustration-image_731324.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -276,7 +276,7 @@ input:focus{
     height: 30%;
     border-radius: 10px;
     padding: 10px 10px 5px 5px;
-    background-image: url('/car-1207304208-612x612.jpg');
+    background-image: url('images/car-1207304208-612x612.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -303,7 +303,7 @@ input:focus{
     height: 20px;
     border: 0px;
     background-color: #4286f400;
-    background-image: url("/x-mark-5-24.ico");
+    background-image: url("images/x-mark-5-24.ico");
     background-repeat: no-repeat;
     background-size: contain;
     padding: 0px;
@@ -319,7 +319,7 @@ input:focus{
     width: 20px;
     height: 20px;
     text-align: right;
-    background-image: url("/edit-3-24.ico");
+    background-image: url("images/edit-3-24.ico");
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
