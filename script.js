@@ -6,9 +6,11 @@ const submitButton = document.getElementsByClassName("submitbtn")
 const rightGreaterDiv = document.querySelector(".right-section-item-container")
 
 
+
+
 document.addEventListener('DOMContentLoaded', async ()=>{
     try {
-       await axios.get('https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses')
+       await axios.get('https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses')
         .then((response)=>{
             for(let i=0; i<response.data.length; i++){
                 //creating elements from database
@@ -54,7 +56,7 @@ async function submit(e){
         // sending to local storage
 
         try {
-            await axios.post('https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses',subObj)
+            await axios.post('https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses',subObj)
             .then((response)=>{
                 console.log(response);
             })
@@ -67,6 +69,7 @@ async function submit(e){
         createElements(subObj)
     }
 }
+
 
 // function which creates elements
 function createElements(anyObject){
@@ -115,7 +118,23 @@ function createElements(anyObject){
     descResult.innerHTML = anyObject.desc
     categoryResult.innerHTML = anyObject.cat
 
+    
 
+    // ==================== class switching for related background change ===========================
+
+    if (categoryResult.innerHTML == 'Fooding') {
+        singleItemContainer.className = 'class-food'
+    }else if(categoryResult.innerHTML == 'Petrol'){
+        singleItemContainer.className ='class-petrol'
+    }else if(categoryResult.innerHTML == 'Party'){
+        singleItemContainer.className = 'class-party'
+    }else if(categoryResult.innerHTML == 'Games'){
+        singleItemContainer.className = 'class-game'
+    }else if(categoryResult.innerHTML == 'House'){
+        singleItemContainer.className ='class-house'
+    }else if(categoryResult.innerHTML == 'Car'){
+        singleItemContainer.className = 'class-car'
+    }
 
 
     // delete and edit funcationality ==================================================================================
@@ -130,13 +149,13 @@ function createElements(anyObject){
         console.log(targetElementText);
 
         try {
-            await axios.get('https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses')
+            await axios.get('https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses')
             .then((response) =>{
                 for(let j=0; j<response.data.length; j++){
                     if(response.data[j].desc == targetElementText){
                     let targetElementIdToRemove = response.data[j]._id
                     try {
-                        axios.delete(`https://crudcrud.com/api/8a5deb052bc94baeb9764e60efb9cf5b/expenses/${targetElementIdToRemove}`)
+                        axios.delete(`https://crudcrud.com/api/44b4213a294e40b399b40394d05fa209/expenses/${targetElementIdToRemove}`)
                         // .then((response) => {
                         //     console.log('deleted from database');
                         // })
@@ -164,6 +183,9 @@ function createElements(anyObject){
     })
 }
 
+
+
+// filter -------------------------------------------------------------- extra function added -----------------------
 // search function
 const searchBox = document.getElementById('search-input-box')
 
@@ -182,3 +204,5 @@ searchBox.addEventListener('keyup', function(e){
     })
 
 })
+
+

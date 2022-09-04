@@ -29,11 +29,20 @@ body {
 .search-box{
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
     height: 40px;
     padding-left: 5px;
+}
+
+.expense-amount-outer-div{
+    display: flex;
+    height: 20px;
+}
+
+.amount-container-total-expense{
+    margin-left: 10px;
 }
 .search-box-and-icon-container{
     background-color: #4286f400;
@@ -169,8 +178,123 @@ input:focus{
     justify-content: space-between;
     margin: 10px;
 }
+
+.class-food{
+    width: 20%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px 10px 5px 5px;
+    background-image: url('/a781ce32751817.56929eefe4f71.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.class-petrol{
+    width: 20%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px 10px 5px 5px;
+    background-image: url('/petrol-pump-graphic-design-template-with-yellow-background-trendy-design-400-211680836.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.class-party{
+    width: 20%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px 10px 5px 5px;
+    background-image: url('/disco-party-people-vector-background-free-116738.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin: 10px;
+    color: white;
+}
+
+.class-game{
+    width: 20%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px 10px 5px 5px;
+    background-image: url('/game-ro.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin: 10px;
+    color: white;
+}
+.class-house{
+    width: 20%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px 10px 5px 5px;
+    background-image: url('/pngtree-isometric-house-illustration-image_731324.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin: 10px;
+    color: white;
+}
+
+.class-car{
+    width: 20%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px 10px 5px 5px;
+    background-image: url('/car-1207304208-612x612.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(17px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin: 10px;
+    color: rgb(255, 255, 255);
+}
+
+
+
 .item-delete-button{
     text-align: right;
+    background-color: #4286f400;
 }
 
 .single-item-delete-btn{
@@ -179,7 +303,7 @@ input:focus{
     height: 20px;
     border: 0px;
     background-color: #4286f400;
-    background-image: url("delete.png");
+    background-image: url("/x-mark-5-24.ico");
     background-repeat: no-repeat;
     background-size: contain;
     padding: 0px;
@@ -192,15 +316,14 @@ input:focus{
     color: #ffffff;
 }
 .edit-button{
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     text-align: right;
-    background-image: url("feather-pen.png");
+    background-image: url("/edit-3-24.ico");
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 0px;
     cursor: pointer;
-    background-color: #ffffff00;
+    background-color: #00000000;
     border: 0px;
 }
 .amount-result{
@@ -208,6 +331,7 @@ input:focus{
     font-size: 40px;
     padding: 0px;
     margin: 0px;
+
 }
 
 .desc-result{
